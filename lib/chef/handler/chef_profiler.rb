@@ -24,26 +24,26 @@ class Chef
         end
 
         # print each timing by group, sorting with highest elapsed time first
-        Chef::Log.debug "Elapsed_time  Cookbook"
-        Chef::Log.debug "------------  -------------"
+        Chef::Log.info "Elapsed_time  Cookbook"
+        Chef::Log.info "------------  -------------"
         cookbooks.sort_by{ |k,v| -v }.each do |cookbook, run_time|
-          Chef::Log.debug "%12f  %s" % [run_time, cookbook]
+          Chef::Log.info "%12f  %s" % [run_time, cookbook]
         end
-        Chef::Log.debug ""
+        Chef::Log.info ""
 
-        Chef::Log.debug "Elapsed_time  Recipe"
-        Chef::Log.debug "------------  -------------"
+        Chef::Log.info "Elapsed_time  Recipe"
+        Chef::Log.info "------------  -------------"
         recipes.sort_by{ |k,v| -v }.each do |recipe, run_time|
-          Chef::Log.debug "%12f  %s" % [run_time, recipe]
+          Chef::Log.info "%12f  %s" % [run_time, recipe]
         end
-        Chef::Log.debug ""
+        Chef::Log.info ""
 
-        Chef::Log.debug "Elapsed_time  Resource"
-        Chef::Log.debug "------------  -------------"
+        Chef::Log.info "Elapsed_time  Resource"
+        Chef::Log.info "------------  -------------"
         resources.sort_by{ |k,v| -v }.each do |resource, run_time|
-          Chef::Log.debug "%12f  %s" % [run_time, resource]
+          Chef::Log.info "%12f  %s" % [run_time, resource]
         end
-        Chef::Log.debug ""
+        Chef::Log.info ""
       end
 
     end

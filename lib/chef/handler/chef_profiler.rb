@@ -9,7 +9,7 @@
 class Chef
   class Handler
     class Profiler < Chef::Handler
-      VERSION = '0.0.2'
+      VERSION = '0.0.3'
 
       def report
         cookbooks = Hash.new(0)
